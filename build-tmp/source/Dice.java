@@ -1,8 +1,24 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Dice extends PApplet {
+
 Die prepareTo, polarMolecule;
 boolean startRolling, multiplyDice, resetDice;
 int i;
 
-void setup()
+public void setup()
 {
 
 	loop();
@@ -15,7 +31,7 @@ void setup()
 	multiplyDice = false;
 	resetDice = false;
 }
-void draw()
+public void draw()
 {
 	if (multiplyDice) {
 		prepareTo.siz = prepareTo.siz/2;
@@ -51,7 +67,7 @@ void draw()
 	
 	
 }
-void mousePressed()
+public void mousePressed()
 {
 	if (mouseButton == LEFT) {
 		
@@ -79,14 +95,14 @@ class Die //models one single dice cube
 		rollResult = 6;
 		
 	}
-	void roll()
+	public void roll()
 	{
 		if (startRolling) {
 			rollResult = (int)(Math.random()*6) + 1;
 		}
 		
 	}
-	void show()
+	public void show()
 	{
 		fill(255);
 		rect(myX, myY, siz * 10, siz * 10);
@@ -108,10 +124,10 @@ class Die //models one single dice cube
 			ellipse(myX + siz * 8, myY + siz * 8, siz, siz);
 		}
 		else if (rollResult == 4) {
-			ellipse(myX + siz * 2.4, myY + siz * 2.4, siz, siz);
-			ellipse(myX + siz * 2.4, myY + siz * 7.6, siz, siz);
-			ellipse(myX + siz * 7.6, myY + siz * 2.4, siz, siz);
-			ellipse(myX + siz * 7.6, myY + siz * 7.6, siz, siz);
+			ellipse(myX + siz * 2.4f, myY + siz * 2.4f, siz, siz);
+			ellipse(myX + siz * 2.4f, myY + siz * 7.6f, siz, siz);
+			ellipse(myX + siz * 7.6f, myY + siz * 2.4f, siz, siz);
+			ellipse(myX + siz * 7.6f, myY + siz * 7.6f, siz, siz);
 		}
 		else if (rollResult == 5) {
 			ellipse(myX + siz * 2, myY + siz * 2, siz, siz);
@@ -129,4 +145,13 @@ class Die //models one single dice cube
 			ellipse(myX + siz * 8, myY + siz * 8, siz, siz);
 		}
 	}
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Dice" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
