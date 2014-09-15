@@ -124,10 +124,10 @@ class Die //models one single dice cube
 			ellipse(myX + siz * 8, myY + siz * 8, siz, siz);
 		}
 		else if (rollResult == 4) {
-			ellipse(myX + siz * 2.4f, myY + siz * 2.4f, siz, siz);
-			ellipse(myX + siz * 2.4f, myY + siz * 7.6f, siz, siz);
-			ellipse(myX + siz * 7.6f, myY + siz * 2.4f, siz, siz);
-			ellipse(myX + siz * 7.6f, myY + siz * 7.6f, siz, siz);
+			ellipse(myX + siz * 2, myY + siz * 2, siz, siz);
+			ellipse(myX + siz * 2, myY + siz * 8, siz, siz);
+			ellipse(myX + siz * 8, myY + siz * 2, siz, siz);
+			ellipse(myX + siz * 8, myY + siz * 8, siz, siz);
 		}
 		else if (rollResult == 5) {
 			ellipse(myX + siz * 2, myY + siz * 2, siz, siz);

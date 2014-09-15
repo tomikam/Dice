@@ -91,7 +91,7 @@ class Die //models one single dice cube
 		fill(255);
 		rect(myX, myY, siz * 10, siz * 10);
 		fill(0, 0, 0);
-		System.out.println(rollResult);
+		//System.out.println(rollResult);
 
 		if (rollResult == 1) 
 		{
@@ -108,10 +108,10 @@ class Die //models one single dice cube
 			ellipse(myX + siz * 8, myY + siz * 8, siz, siz);
 		}
 		else if (rollResult == 4) {
-			ellipse(myX + siz * 2.4, myY + siz * 2.4, siz, siz);
-			ellipse(myX + siz * 2.4, myY + siz * 7.6, siz, siz);
-			ellipse(myX + siz * 7.6, myY + siz * 2.4, siz, siz);
-			ellipse(myX + siz * 7.6, myY + siz * 7.6, siz, siz);
+			ellipse(myX + siz * 2, myY + siz * 2, siz, siz);
+			ellipse(myX + siz * 2, myY + siz * 8, siz, siz);
+			ellipse(myX + siz * 8, myY + siz * 2, siz, siz);
+			ellipse(myX + siz * 8, myY + siz * 8, siz, siz);
 		}
 		else if (rollResult == 5) {
 			ellipse(myX + siz * 2, myY + siz * 2, siz, siz);
